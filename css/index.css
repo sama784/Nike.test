@@ -1,0 +1,132 @@
+header #SC-carousel,
+header #SC-carousel .sc-carousel-inner {
+    position: relative;
+}
+
+header #SC-carousel .sc-carousel-inner .carousel-item {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    /* z-index: 1; */
+    display: none;
+}
+
+header #SC-carousel .sc-carousel-inner .carousel-item.active {
+    /* z-index: 3; */
+    display: block;
+}
+
+header #SC-carousel .sc-carousel-inner .carousel-item:nth-of-type(1) {
+    background-image: url("../nike_images/home-bg-1.jpg");
+}
+
+header #SC-carousel .sc-carousel-inner .carousel-item:nth-of-type(2) {
+    background-image: url("../nike_images/home-bg-2.jpg");
+}
+
+header #SC-carousel .sc-carousel-inner .carousel-item:nth-of-type(3) {
+    background-image: url("../nike_images/home-bg-3.jpg");
+}
+
+
+
+header #SC-carousel .sc-carousel-inner .carousel-item .part1 {
+    display: flex;
+    align-items: center;
+}
+
+header #SC-carousel .sc-carousel-inner .carousel-item .part1 .item{
+    transform: translateX(-100%);
+    opacity: 0;
+    transition-duration: 1.3s;
+    transition-delay: 1s;
+}
+header #SC-carousel .sc-carousel-inner .carousel-item.show .part1 .item{
+    transform: translateX(0%);
+    opacity: 1;
+}
+
+header #SC-carousel .sc-carousel-inner .carousel-item .part1 h2 {
+    font-size: 50px;
+    color: #2c2c54;
+    font-weight: 600;
+}
+
+header #SC-carousel .sc-carousel-inner .carousel-item .part2 .item {
+    position: relative;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+header #SC-carousel .sc-carousel-inner .carousel-item .part2 img:nth-of-type(1) {
+    position: relative;
+    width: 70%;
+    transform: translateY(-200px);
+    transition-duration: 1s;
+    transition-delay: .5s;
+    opacity: 0;
+}
+
+header #SC-carousel .sc-carousel-inner .carousel-item.show .part2 img:nth-of-type(1) {
+    transform: translateY(-10%);
+    opacity: 1;
+
+}
+
+header #SC-carousel .sc-carousel-inner .carousel-item .part2 img:nth-of-type(2) {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 95%;
+    opacity: 0;
+    transform: translate(-50%, -50%) rotate(0deg) scale(.5);
+    transition-duration: 1s;
+}
+
+header #SC-carousel .sc-carousel-inner .carousel-item.show .part2 img:nth-of-type(2) {
+    transform: translate(-50%, -50%) rotate(-35deg) scale(1);
+    opacity: 1;
+    
+}
+
+
+
+
+
+
+header #SC-carousel>button {
+    position: absolute;
+    top: 50%;
+    background-color: transparent;
+    border-radius: 100%;
+    transform: translateY(-50%);
+    width: 45px;
+    height: 45px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid var(--main-color);
+    color: var(--main-color);
+    transition-duration: .5s;
+    z-index: 5;
+}
+
+header #SC-carousel>button:hover {
+    color: white;
+    background-color: var(--main-color);
+
+}
+
+header #SC-carousel button.prev {
+    left: 20px;
+}
+
+header #SC-carousel button.next {
+    right: 20px;
+}
