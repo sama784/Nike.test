@@ -1,3 +1,82 @@
+nav.navbar {
+    background: rgba(242, 242, 242, .5);
+    background: -webkit-linear-gradient(to right, rgba(234, 234, 234, .5), rgba(219, 219, 219, .5), rgba(242, 242, 242, .5), rgba(173, 169, 150, .5));
+    background: linear-gradient(to right, rgba(234, 234, 234, .5), rgba(219, 219, 219, .5), rgba(242, 242, 242, .5), rgba(173, 169, 150, 0.5));
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+    box-shadow: 0 .5rem 1rem #0000001a;
+}
+
+nav.navbar.scrolled {
+    background: #ADA996;
+    background: -webkit-linear-gradient(to right, #EAEAEA, #DBDBDB, #F2F2F2, #ADA996);
+    background: linear-gradient(to right, #EAEAEA, #DBDBDB, #F2F2F2, #ADA996);
+}
+
+nav.navbar .navbar-brand {
+    width: 8%;
+}
+
+nav.navbar i {
+    transition-duration: .5s;
+    cursor: pointer;
+    color: #777;
+}
+
+nav.navbar i:hover {
+    color: var(--main-color);
+}
+
+nav.navbar .nav-link {
+    letter-spacing: 1.2px;
+    position: relative;
+}
+
+nav.navbar .nav-link.active {
+    padding: 8px;
+    color: var(--main-color);
+}
+
+nav.navbar .nav-link:before,
+nav.navbar .nav-link:after {
+    content: "";
+    width: 25%;
+    height: 25%;
+    display: block;
+    position: absolute;
+    opacity: 0;
+    transition-duration: .5s;
+}
+
+nav.navbar .nav-link:hover:before,
+nav.navbar .nav-link.active:before,
+nav.navbar .nav-link:hover:after,
+nav.navbar .nav-link.active:after {
+    transform: translateX(0px);
+    opacity: 1;
+}
+
+nav.navbar .nav-link:before {
+    top: 0;
+    left: 0;
+    border-top: 1px solid var(--main-color);
+    border-left: 1px solid var(--main-color);
+    transform: translateX(-15px);
+}
+
+nav.navbar .nav-link:after {
+    bottom: 0;
+    right: 0;
+    border-bottom: 1px solid var(--main-color);
+    border-right: 1px solid var(--main-color);
+    transform: translateX(15px);
+}
+
+
+/*         Header           */
 header #SC-carousel,
 header #SC-carousel .sc-carousel-inner {
     position: relative;
@@ -40,13 +119,14 @@ header #SC-carousel .sc-carousel-inner .carousel-item .part1 {
     align-items: center;
 }
 
-header #SC-carousel .sc-carousel-inner .carousel-item .part1 .item{
+header #SC-carousel .sc-carousel-inner .carousel-item .part1 .item {
     transform: translateX(-100%);
     opacity: 0;
     transition-duration: 1.3s;
     transition-delay: 1s;
 }
-header #SC-carousel .sc-carousel-inner .carousel-item.show .part1 .item{
+
+header #SC-carousel .sc-carousel-inner .carousel-item.show .part1 .item {
     transform: translateX(0%);
     opacity: 1;
 }
@@ -92,7 +172,7 @@ header #SC-carousel .sc-carousel-inner .carousel-item .part2 img:nth-of-type(2) 
 header #SC-carousel .sc-carousel-inner .carousel-item.show .part2 img:nth-of-type(2) {
     transform: translate(-50%, -50%) rotate(-35deg) scale(1);
     opacity: 1;
-    
+
 }
 
 
